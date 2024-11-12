@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos chiffres-clés</title>
+    <style>
+        body {
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 8px;
+			font-size: 24px
+        }
+
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: medium;
+        }
+
+        span {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            font-size: medium;
+        }
+
+        .chiffre-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .chiffre-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nos chiffres-clés</h1>
+    <div class="chiffre-container">
+        <div class="chiffre-item">
+            <h3>Adhérents</h3>
+            <span class="chiffre-item-data" id="adherents">0</span>
+        </div>
+        <div class="chiffre-item">
+            <h3>Chefs</h3>
+            <span class="chiffre-item-data" id="chefs">0</span>
+        </div>
+        <div class="chiffre-item">
+            <h3>Camps par ans</h3>
+            <span class="chiffre-item-data" id="camps">0</span>
+        </div>
+    </div>
+    <div id="json-data"></div>
+    <script>
+        console.time('Fetch time');
+        fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://www.scouts-europe.org/')}`)
+        .then(response => {
+            console.timeEnd('Fetch time');
+            if (response.ok) return response.json();
+            throw new Error('Network response was not ok.');
+        })
+        .then(data => {
+            console.time('Parsing time');
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(data.contents, 'text/html');
+            const counters = doc.querySelectorAll('.elementor-counter .counter');
+
+            document.getElementById('adherents').textContent = counters[0].getAttribute('data-to-value');
+            document.getElementById('chefs').textContent = counters[1].getAttribute('data-to-value');
+            document.getElementById('camps').textContent = counters[2].getAttribute('data-to-value');
+            console.timeEnd('Parsing time');
+        })
+        .catch(error => console.error('Fetch error:', error));
+    </script>
+</body>
+</html>
