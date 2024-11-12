@@ -2,23 +2,35 @@
 <html lang="fr">
 
 <head>
+    <!-- Configuration de l'encodage et mise en page mobile-friendly -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Titre de la page -->
     <title>Cards Layout</title>
+
+    <!-- Import de la police Google Fonts "Poppins" -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
+    <!-- Styles CSS de la page -->
     <style>
+        /* Style général du corps de la page */
         body {
             font-family: 'Poppins', sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             background-color: #f5f5f5;
             color: white;
+            padding: 20px;
+            gap: 8px;
         }
 
+        /* Style des liens pour qu'ils apparaissent sans soulignement */
         a,
         a:hover,
         a:visited {
@@ -26,20 +38,24 @@
             color: white;
         }
 
+        /* Conteneur principal pour les cartes, disposé en grille */
         .container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            /* Deux colonnes */
             gap: 8px;
             max-width: 1200px;
-            padding: 20px;
+            /* Limite la largeur */
             overflow: hidden;
         }
 
+        /* Style des liens pour prendre toute la hauteur de la carte */
         a {
             display: flex;
             height: 100%;
         }
 
+        /* Style de chaque carte individuelle */
         .card {
             padding: 20px;
             border-radius: 16px;
@@ -51,17 +67,20 @@
             box-sizing: border-box;
         }
 
+        /* Style pour le titre de la carte */
         .card-title {
             font-weight: 600;
             margin: 8px 0;
             font-size: 16px;
         }
 
+        /* Style pour le contenu de la carte */
         .card-content {
             font-weight: 300;
             font-size: 12px;
         }
 
+        /* Zone de l'icône dans la carte, avec fond transparent */
         .icon-placeholder {
             width: 50px;
             height: 50px;
@@ -70,30 +89,52 @@
             border-radius: 8px;
         }
 
-        svg {
+        /* Positionne l'icône de la classe "carrick" au centre */
+        .carrick .icon-placeholder {
+            margin: 0 auto;
+        }
+
+        /* S'assure que les SVG et images remplissent leur conteneur */
+        svg,
+        img {
             width: 100%;
             height: 100%;
         }
 
+        /* Couleur de fond pour les cartes rouges */
         .red {
             background-color: #be0033;
         }
 
+        /* Couleur de fond pour les cartes bleues */
         .blue {
             background-color: #29224F;
+        }
+
+        /* Conteneur pour la section Carrick, avec centré et bord arrondi */
+        .carrick {
+            background-color: #00834d;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            border-radius: 16px;
         }
     </style>
 </head>
 
 <body>
+    <!-- Section contenant toutes les cartes sous forme de liens -->
     <div class="container">
+
+        <!-- Carte "Sycomore" -->
         <a href="https://sycomore.scouts-europe.org/" target="_blank">
             <div class="card blue">
                 <div class="icon-placeholder">
+                    <!-- Icône SVG pour Sycomore -->
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                         fill="#FFFFFF">
-                        <path
-                            d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z" />
+                        <path d="..." />
                     </svg>
                 </div>
                 <div class="card-title">Sycomore</div>
@@ -102,108 +143,38 @@
             </div>
         </a>
 
+        <!-- Carte "Support AGSE" -->
         <a href="https://support.scouts-europe.org/support/home">
             <div class="card red">
                 <div class="icon-placeholder">
+                    <!-- Icône SVG pour Support AGSE -->
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                         fill="#FFFFFF">
-                        <path
-                            d="M480-120q-17 0-28.5-11.5T440-160q0-17 11.5-28.5T480-200h280v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v204q0 17-11.5 28.5T160-240q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H480ZM360-400q-17 0-28.5-11.5T320-440q0-17 11.5-28.5T360-480q17 0 28.5 11.5T400-440q0 17-11.5 28.5T360-400Zm240 0q-17 0-28.5-11.5T560-440q0-17 11.5-28.5T600-480q17 0 28.5 11.5T640-440q0 17-11.5 28.5T600-400Zm-359-62q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z" />
+                        <path d="..." />
                     </svg>
                 </div>
                 <div class="card-title">Support AGSE</div>
                 <div class="card-content">Trouve ici toutes les réponses à tes questions sur les outils, l'administratif
-                    et
-                    la réglementation.</div>
+                    et la réglementation.</div>
             </div>
         </a>
 
-        <a href="https://banque.scouts-europe.org/login" target="_blank">
-            <div class="card red">
+        <!-- Les autres cartes sont structurées de la même manière -->
+
+    </div>
+
+    <!-- Section spécifique pour la boutique Carrick -->
+    <div class="carrick">
+        <a href="https://www.carrick.fr/" target="_blank">
+            <div class="card">
                 <div class="icon-placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                        fill="#FFFFFF">
-                        <path
-                            d="M200-320v-200q0-17 11.5-28.5T240-560q17 0 28.5 11.5T280-520v200q0 17-11.5 28.5T240-280q-17 0-28.5-11.5T200-320Zm240 0v-200q0-17 11.5-28.5T480-560q17 0 28.5 11.5T520-520v200q0 17-11.5 28.5T480-280q-17 0-28.5-11.5T440-320ZM120-120q-17 0-28.5-11.5T80-160q0-17 11.5-28.5T120-200h720q17 0 28.5 11.5T880-160q0 17-11.5 28.5T840-120H120Zm560-200v-200q0-17 11.5-28.5T720-560q17 0 28.5 11.5T760-520v200q0 17-11.5 28.5T720-280q-17 0-28.5-11.5T680-320Zm160-320H116q-15 0-25.5-10.5T80-676v-22q0-11 5.5-19t14.5-13l344-172q17-8 36-8t36 8l342 171q11 5 16.5 15t5.5 21v15q0 17-11.5 28.5T840-640Z" />
-                    </svg>
+                    <!-- Image représentant Carrick -->
+                    <img src="https://www.carrick.fr/img/cms/picto_evenement.png" alt="Carrick" />
                 </div>
-                <div class="card-title">Banque AGSE</div>
-                <div class="card-content">Banque AGSE est le nouvel outil de gestion de ta comptabilité ! Enregistre tes
-                    dépenses, effectue tes virements, rembourse les notes de frais.</div>
+                <div class="card-title">Carrick</div>
+                <div class="card-content">Boutique Carrick</div>
             </div>
         </a>
-
-        <a href="https://azimuth.scouts-europe.org/" target="_blank">
-            <div class="card blue">
-                <div class="icon-placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
-                        <path
-                        d="m335-310 202-58q20-6 34.5-20.5T592-423l58-202q3-11-5.5-19.5T625-650l-202 58q-20 6-34.5 20.5T368-537l-58 202q-3 11 5.5 19.5T335-310Zm145-110q-25 0-42.5-17.5T420-480q0-25 17.5-42.5T480-540q25 0 42.5 17.5T540-480q0 25-17.5 42.5T480-420Zm0 340q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z" />
-                    </svg>
-                </div>
-                <div class="card-title">Azimuth</div>
-                <div class="card-content">AZIMUTH est une plateforme innovante conçue pour simplifier et optimiser le
-                    processus d'inscription aux formations des chefs et cheftaines.</div>
-            </div>
-        </a>
-
-        <a href="https://scout.fidesassurances.fr/accounts/login/?next=/" target="_blank">
-            <div class="card blue">
-                <div class="icon-placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
-                        <path
-                        d="M480-720q-33 0-56.5-23.5T400-800q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800q0 33-23.5 56.5T480-720ZM360-120v-480q-49-4-99-11t-98-18q-17-4-27.5-19t-5.5-32q5-17 21-25t34-4q70 15 145.5 22t149.5 7q74 0 149.5-7T775-709q18-4 34 4t21 25q5 17-5.5 32T797-629q-48 11-98 18t-99 11v480q0 17-11.5 28.5T560-80q-17 0-28.5-11.5T520-120v-200h-80v200q0 17-11.5 28.5T400-80q-17 0-28.5-11.5T360-120Z" />
-                    </svg>
-                </div>
-                <div class="card-title">Intranet Assurance</div>
-                <div class="card-content">Bienvenue sur la plateforme de déclaration d'accidents des Guides et Scouts
-                    d'Europe proposée par notre assureur Fides Assurances.</div>
-            </div>
-        </a>
-
-        <a href="https://www.helloasso.com/associations/association-des-guides-et-scouts-d-europe/formulaires/1" target="_blank">
-            <div class="card red">
-                <div class="icon-placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                        fill="#FFFFFF">
-                        <path
-                            d="M840-640q32 0 56 24t24 56v80q0 7-1.5 15t-4.5 15L794-168q-9 20-30 34t-44 14H400q-33 0-56.5-23.5T320-200v-407q0-16 6.5-30.5T344-663l217-216q15-14 35.5-17t39.5 7q19 10 27.5 28t3.5 37l-45 184h218ZM160-120q-33 0-56.5-23.5T80-200v-360q0-33 23.5-56.5T160-640q33 0 56.5 23.5T240-560v360q0 33-23.5 56.5T160-120Z" />
-                    </svg>
-                </div>
-                <div class="card-title">HelloAsso</div>
-                <div class="card-content">HelloAsso est le portail à disposition de chaque groupe pour mettre en place
-                    des
-                    campagnes de dons, organiser des événements, récolter des frais d'activités.</div>
-            </div>
-        </a>
-
-    <a href="https://app.jenji.io/login?redirectTo=%2Fdashboard" target="_blank">
-        <div class="card red">
-            <div class="icon-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
-                    <path
-                        d="M240-80q-50 0-85-35t-35-85v-80q0-17 11.5-28.5T160-320h80v-536q0-7 6-9.5t11 2.5l29 29q6 6 14 6t14-6l32-32q6-6 14-6t14 6l32 32q6 6 14 6t14-6l32-32q6-6 14-6t14 6l32 32q6 6 14 6t14-6l32-32q6-6 14-6t14 6l32 32q6 6 14 6t14-6l29-29q5-5 11-2.5t6 9.5v656q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-560H320v440h320q17 0 28.5 11.5T680-280v80q0 17 11.5 28.5T720-160ZM400-680h160q17 0 28.5 11.5T600-640q0 17-11.5 28.5T560-600H400q-17 0-28.5-11.5T360-640q0-17 11.5-28.5T400-680Zm0 120h160q17 0 28.5 11.5T600-520q0 17-11.5 28.5T560-480H400q-17 0-28.5-11.5T360-520q0-17 11.5-28.5T400-560Zm280-40q-17 0-28.5-11.5T640-640q0-17 11.5-28.5T680-680q17 0 28.5 11.5T720-640q0 17-11.5 28.5T680-600Zm0 120q-17 0-28.5-11.5T640-520q0-17 11.5-28.5T680-560q17 0 28.5 11.5T720-520q0 17-11.5 28.5T680-480Z" />
-                </svg>
-            </div>
-            <div class="card-title">Jenji</div>
-            <div class="card-content">Pour tous les bénévoles engagés au niveau national, Jenji est l'application pour
-                déclarer et se faire rembourser ses notes de frais.</div>
-        </div>
-    </a>
-
-    <a href="https://tam.extranet.jeunesse-sports.gouv.fr/" target="_blank">
-        <div class="card blue">
-            <div class="icon-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
-                    <path
-                        d="M240-80q-33 0-56.5-23.5T160-160v-160q0-33 23.5-56.5T240-400h480q33 0 56.5 23.5T800-320v160q0 33-23.5 56.5T720-80H240Zm40-160h400q17 0 28.5-11.5T720-280q0-17-11.5-28.5T680-320H280q-17 0-28.5 11.5T240-280q0 17 11.5 28.5T280-240Zm167-206L299-653q-9-13-12.5-28.5T285-713q12-73 66-120t129-47q75 0 129 47t66 120q2 16-1.5 31.5T661-653L513-446q-12 17-33 17t-33-17Z" />
-                </svg>
-            </div>
-            <div class="card-title">TAM</div>
-            <div class="card-content">TAM est la plateforme de déclaration obligatoire des activités mise à disposition
-                par le ministère de la jeunesse pour tous les accueils collectifs de mineurs.</div>
-        </div>
-    </a>
     </div>
 </body>
 

@@ -1,89 +1,147 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+    <!-- Configuration de l'encodage et mise en page mobile-friendly -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Importation de la police "Poppins" depuis Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=loupe" />
+
+    <!-- Titre de la page affiché dans l'onglet du navigateur -->
     <title>Contacts utiles</title>
+
+    <!-- Styles CSS de la page -->
     <style>
+        /* Style général pour le corps de la page */
         body {
             font-family: 'Poppins', sans-serif;
+            /* Utilisation de la police "Poppins" */
             background-color: #f5f5f5;
+            /* Couleur de fond gris clair */
             margin: 0;
             display: flex;
             justify-content: center;
+            /* Centre le contenu horizontalement */
             align-items: center;
+            /* Centre le contenu verticalement */
             padding: 20px;
             color: #333;
+            /* Couleur du texte */
         }
 
+        /* Conteneur principal de la page */
         .container {
             max-width: 800px;
+            /* Limite la largeur à 800px */
             width: 100%;
         }
 
+        /* Style du titre principal */
         h1 {
             text-align: center;
             font-size: 2em;
             margin-bottom: 20px;
             color: #333;
+            /* Couleur du titre */
         }
 
+        /* Conteneur pour organiser les sections de contact */
         .contact-section {
             display: flex;
             flex-wrap: wrap;
+            /* Permet aux éléments de passer à la ligne si nécessaire */
             gap: 15px;
+            /* Espace entre les éléments */
             justify-content: space-between;
+            /* Espace les éléments de manière égale */
         }
 
-        /* Glassmorphism inspired */
+        /* Style des éléments de contact inspiré du Glassmorphism */
         .contact-item {
             flex: 1 1 45%;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             color: #333;
         }
 
+        /* Style du titre de chaque section de contact */
         .contact-item h3 {
             font-size: 1.2em;
             margin-bottom: 10px;
             color: #333;
         }
+        .contact-item.withZoom h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a {
+                color: inherit;
+            }
+        }
 
+        /* Style du texte de chaque item de contact */
         .contact-item p {
             margin: 5px 0;
             font-size: 0.95em;
         }
 
+        /* Style des liens dans chaque item */
         .contact-item a {
             color: #007BFF;
+            /* Couleur bleue pour les liens */
             text-decoration: none;
         }
 
+        /* Soulignement des liens au survol */
         .contact-item a:hover {
             text-decoration: underline;
         }
 
+        /* Style du pied de page */
         .footer {
             text-align: center;
             margin-top: 20px;
             color: #555;
+            /* Couleur gris moyen */
+        }
+        .contact-item {
+            position: relative;
+        }
+
+        .view-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            color: #007BFF;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
+        <!-- Titre principal de la page -->
         <h1 class="">Contacts utiles</h1>
+
+        <!-- Section contenant les différents items de contact -->
         <div class="contact-section">
             <div class="contact-item">
                 <h3>Support général :</h3>
                 <p><a href="mailto:support@scouts-europe.org">support@scouts-europe.org</a></p>
-                <p><a href="mailto:données-personnelles@scouts-europe.org">données-personnelles@scouts-europe.org</a></p>
+                <p><a href="mailto:données-personnelles@scouts-europe.org">données-personnelles@scouts-europe.org</a>
+                </p>
             </div>
             <div class="contact-item">
                 <h3>Administration, Comptabilité, Assurances :</h3>
@@ -118,27 +176,6 @@
                 <p><a href="mailto:revues@scouts-europe.org">revues@scouts-europe.org</a></p>
             </div>
             <div class="contact-item">
-                <h3>Logistique :</h3>
-                <p><a href="mailto:logistique@scouts-europe.org">logistique@scouts-europe.org</a></p>
-            </div>
-            <div class="contact-item">
-                <h3>Campagne des calendriers :</h3>
-                <p><a href="mailto:calendriers@scouts-europe.org">calendriers@scouts-europe.org</a></p>
-            </div>
-            <div class="contact-item">
-                <h3>Expression :</h3>
-                <p><a href="mailto:expression@scouts-europe.org">expression@scouts-europe.org</a></p>
-            </div>
-            <div class="contact-item">
-                <h3>Assemblée générale :</h3>
-                <p><a href="mailto:assemblee-generale@scouts-europe.org">assemblee-generale@scouts-europe.org</a></p>
-            </div>
-            <div class="contact-item">
-                <h3>Grands événements :</h3>
-                <p><a href="mailto:paray@scouts-europe.org">paray@scouts-europe.org</a></p>
-                <p><a href="mailto:vezelay@scouts-europe.org">vezelay@scouts-europe.org</a></p>
-            </div>
-            <div class="contact-item">
                 <h3>Standard du centre national :</h3>
                 <p>01 64 45 53 60</p>
             </div>
@@ -146,7 +183,16 @@
                 <h3>Numéro d'urgence</h3>
                 <p>01 64 45 53 87</p>
             </div>
+            <div class="contact-item withZoom">
+                <h3>Trombinoscope du CN
+                    <a href="https://raw.githubusercontent.com/AlexisAmadei/GoodBarber/refs/heads/main/assets/trombi.jpg">
+                        <span class="material-symbols-outlined">loupe</span>
+                    </a>
+                </h3>
+                <img src="https://github.com/AlexisAmadei/GoodBarber/blob/3c72ed1df18321afe06c4f39589c37619784d3d9/assets/trombi.jpg?raw=true" />
+            </div>
         </div>
     </div>
 </body>
+
 </html>
