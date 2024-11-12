@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,38 +51,16 @@
     <div class="chiffre-container">
         <div class="chiffre-item">
             <h3>Adhérents</h3>
-            <span class="chiffre-item-data" id="adherents">0</span>
+            <span class="chiffre-item-data" id="adherents">37000</span>
         </div>
         <div class="chiffre-item">
             <h3>Chefs</h3>
-            <span class="chiffre-item-data" id="chefs">0</span>
+            <span class="chiffre-item-data" id="chefs">6500</span>
         </div>
         <div class="chiffre-item">
             <h3>Camps par ans</h3>
-            <span class="chiffre-item-data" id="camps">0</span>
+            <span class="chiffre-item-data" id="camps">1000</span>
         </div>
     </div>
-    <div id="json-data"></div>
-    <script>
-        console.time('Fetch time');
-        fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://www.scouts-europe.org/')}`)
-        .then(response => {
-            console.timeEnd('Fetch time');
-            if (response.ok) return response.json();
-            throw new Error('Network response was not ok.');
-        })
-        .then(data => {
-            console.time('Parsing time');
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(data.contents, 'text/html');
-            const counters = doc.querySelectorAll('.elementor-counter .counter');
-
-            document.getElementById('adherents').textContent = counters[0].getAttribute('data-to-value');
-            document.getElementById('chefs').textContent = counters[1].getAttribute('data-to-value');
-            document.getElementById('camps').textContent = counters[2].getAttribute('data-to-value');
-            console.timeEnd('Parsing time');
-        })
-        .catch(error => console.error('Fetch error:', error));
-    </script>
 </body>
 </html>
